@@ -57,8 +57,8 @@ main {
 @media only screen and (min-width: 640px) {
   #root {
     grid-template-areas:
-      "C B"
-      "A B";
+      "A B"
+      "C B";
   }
   #foto {
     height: 100%;
