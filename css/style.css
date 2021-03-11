@@ -1,8 +1,66 @@
-.attribution {
-    font-size: 11px;
-    text-align: center;
-  }
+:root {
+  --soft-red: hsl(0, 93%, 68%);
+  --ligh-tred: hsl(0, 36%, 70%);
+  --dark-grayish: hsl(0, 6%, 24%);
+}
 
-  .attribution a {
-    color: hsl(228, 45%, 44%);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Karla, sans-serif;
+}
+
+body {
+  background-color: #e6eff6;
+}
+
+#root {
+  width: 100vw;
+  display: grid;
+  grid-template-areas:
+    "A"
+    "B"
+    "C";
+}
+
+header {
+  grid-area: A;
+  height: 100px;
+  width: 100%;
+  background-color: blue;
+}
+
+#foto {
+  grid-area: B;
+  height: 100px;
+  width: 100%;
+  background-color: green;
+}
+
+main {
+  grid-area: C;
+  height: 100px;
+  width: 100%;
+  background-color: pink;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 640px) {
+  #root {
+    grid-template-areas:
+      "C B"
+      "A B";
   }
+  #foto {
+    height: 100%;
+  }
+}
