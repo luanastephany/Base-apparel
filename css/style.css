@@ -1,6 +1,6 @@
 :root {
   --soft-red: hsl(0, 93%, 68%);
-  --ligh-tred: hsl(0, 36%, 70%);
+  --light-red: hsl(0, 36%, 70%);
   --dark-grayish: hsl(0, 6%, 24%);
 }
 
@@ -15,8 +15,15 @@ body {
   background-color: #e6eff6;
 }
 
-#root {
+#root{
+  display: flex;
+  min-height: 100vh;
   width: 100vw;
+  background-color: #F0F0F0;
+}
+
+#card {
+  width: 100%;
   display: grid;
   grid-template-areas:
     "A"
@@ -24,43 +31,102 @@ body {
     "C";
 }
 
+/* Cabeçalho com nome do projeto */
 header {
   grid-area: A;
-  height: 100px;
+  height: 110px;
   width: 100%;
-  background-color: blue;
+  background-color: white;
 }
 
+header .topo img {
+  margin-left: 42px;
+  margin-top: 40px;
+}
+
+/* Imagem */
 #foto {
   grid-area: B;
-  height: 100px;
+  height: 330px;
   width: 100%;
-  background-color: green;
+  object-fit: cover;
 }
 
+/* Textos e campo de email*/
 main {
   grid-area: C;
-  height: 100px;
+  min-height: 620px;
   width: 100%;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 245, 245, 1) 100%
+  );
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
+/* Títulos */
+
+main .text {
+  font-family: "Josefin sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+/* Texto "We're */
+main .text #first {
+  color: var(--light-red);
+  font-weight: 100;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-top: 90px;
+}
+
+/* Texto "Coming Soon" */
+main .text #second {
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+main .text p {
+  color: var(--light-red);
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main .email #input {
+  border: var(--light-red) 1px solid;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 @media only screen and (min-width: 640px) {
-  #root {
+  #card {
     grid-template-areas:
       "A B"
       "C B";
+      width: 1100px;
+      height: 620px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
   #foto {
     height: 100%;
+  }
+
+  #root{
+    justify-content: center;
+    align-items: center;
+  }
+
+  main{
+    min-height: 510px;
+    height: 100%;
+    flex: 1;
   }
 }
