@@ -17,18 +17,22 @@ body {
 
 #root{
   display: flex;
+  justify-content: center;
+    align-items: center;
   min-height: 100vh;
   width: 100vw;
   background-color: #F0F0F0;
 }
 
 #card {
-  width: 100%;
+  width: 1100px;
+  height: 620px;
   display: grid;
   grid-template-areas:
-    "A"
-    "B"
-    "C";
+      "A B"
+      "C B";
+      height: 620px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 
 /* Cabeçalho com nome do projeto */
@@ -47,7 +51,7 @@ header .topo img {
 /* Imagem */
 #foto {
   grid-area: B;
-  height: 330px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
@@ -55,9 +59,10 @@ header .topo img {
 /* Textos e campo de email*/
 main {
   grid-area: C;
-  min-height: 620px;
+  min-height: 510px;
   width: 100%;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(
@@ -90,6 +95,7 @@ main .text #second {
   letter-spacing: 8px;
   text-transform: uppercase;
   margin-bottom: 40px;
+  color: var(--dark-grayish);
 }
 
 main .text p {
@@ -104,29 +110,4 @@ main .email #input {
   border: var(--light-red) 1px solid;
   border-radius: 10px;
   padding: 10px;
-}
-
-@media only screen and (min-width: 640px) {
-  #card {
-    grid-template-areas:
-      "A B"
-      "C B";
-      width: 1100px;
-      height: 620px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  }
-  #foto {
-    height: 100%;
-  }
-
-  #root{
-    justify-content: center;
-    align-items: center;
-  }
-
-  main{
-    min-height: 510px;
-    height: 100%;
-    flex: 1;
-  }
 }
